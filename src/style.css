@@ -1,7 +1,7 @@
 :root {
 	--bg-color: #141414;
-	--main-bg-color: #191919;
-	--main-light-color: #242424;
+	--main-bg-color: #202020;
+	--main-light-color: #191919;
 }
 
 * {
@@ -9,8 +9,6 @@
 	padding: 0;
 	margin: 0;
 	text-decoration: none;
-	/*font-family: "Roboto Slab", serif;*/
-	/*scroll-behavior: smooth;*/
 }
 
 a {
@@ -41,19 +39,21 @@ body {
 }
 
 main {
-	margin: 10vh auto;
-	max-width: 100rem;
+	margin: 2.5rem auto;
+	max-width: 60rem;
 	min-width: 10rem;
 	width: 90%;
 	background-color: var(--main-bg-color);
-	border: 1px solid var(--main-light-color);
+	border: 1px solid rgba(255, 255, 255, 0.1);
 	border-radius: 5px;
+	box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.20);
 	display: grid;
 	grid-template-columns: 1fr 2fr;
 	grid-template-areas:
     "avatar name"
     "contacts about"
-	"education projects";
+	"education projects"
+	"skills projects";
 }
 
 .wrapper {
@@ -74,6 +74,14 @@ main {
 	color: white;
 }
 
+h2 {
+	text-shadow: 1px 1px black;
+}
+
+.light h2 {
+	text-shadow: 1px 1px goldenrod;
+}
+
 .avatar-wrapper {
 	grid-area: avatar;
 	min-height: 10rem;
@@ -84,8 +92,6 @@ main {
 .avatar {
 	height: 100%;
 	width: 100%;
-	/*border: 2px solid goldenrod;*/
-	/*border-radius: 50%;*/
 	border-radius: 5px 0 0 0;
 }
 
@@ -142,12 +148,34 @@ main {
 	grid-area: projects;
 }
 
+.skills-wrapper {
+	grid-area: skills;
+}
 
-.technologies {
+.small {
 	font-size: small;
+	opacity: 0.9;
 	margin-bottom: 0.5rem;
 }
 
-a.technologies {
+a.small {
 	text-decoration: underline;
+}
+
+@media screen and (max-width: 900px) {
+	main {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"avatar"
+			"name"
+			"contacts"
+			"about"
+			"education"
+			"projects"
+			"skills";
+	}
+
+	.avatar {
+		border-radius: 5px 5px 0 0;
+	}
 }

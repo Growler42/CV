@@ -1,0 +1,153 @@
+:root {
+	--bg-color: #141414;
+	--main-bg-color: #191919;
+	--main-light-color: #242424;
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	/*font-family: "Roboto Slab", serif;*/
+	/*scroll-behavior: smooth;*/
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+html {
+	color: white;
+	font-family: 'JetBrains Mono', monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: goldenrod;
+	font-weight: 800;
+}
+
+h1, h2 {
+	margin-bottom: 1rem;
+}
+
+body {
+	background-color: var(--bg-color);
+}
+
+main {
+	margin: 10vh auto;
+	max-width: 100rem;
+	min-width: 10rem;
+	width: 90%;
+	background-color: var(--main-bg-color);
+	border: 1px solid var(--main-light-color);
+	border-radius: 5px;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-template-areas:
+    "avatar name"
+    "contacts about"
+	"education projects";
+}
+
+.wrapper {
+	padding: 2rem;
+}
+
+.light {
+	background-color: var(--main-light-color);
+	color: white;
+}
+
+.light h1,
+.light h2,
+.light h3,
+.light h4,
+.light h5,
+.light h6 {
+	color: white;
+}
+
+.avatar-wrapper {
+	grid-area: avatar;
+	min-height: 10rem;
+	min-width: 10rem;
+	background-color: var(--main-light-color);
+}
+
+.avatar {
+	height: 100%;
+	width: 100%;
+	/*border: 2px solid goldenrod;*/
+	/*border-radius: 50%;*/
+	border-radius: 5px 0 0 0;
+}
+
+.name-wrapper {
+	grid-area: name;
+	background-color: var(--main-light-color);
+	font-size: 1.5rem;
+}
+
+.name {
+	letter-spacing: 1px;
+}
+
+.additional {
+	color: white;
+	font-weight: 200;
+}
+
+.contacts-wrapper {
+	grid-area: contacts;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	list-style: none;
+}
+
+.contact {
+	color: goldenrod;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.about-wrapper {
+	grid-area: about;
+}
+
+.education-wrapper {
+	grid-area: education;
+}
+
+.education h4 {
+	margin: 0;
+}
+
+.year {
+	color: goldenrod;
+}
+
+.projects-wrapper {
+	grid-area: projects;
+}
+
+
+.technologies {
+	font-size: small;
+	margin-bottom: 0.5rem;
+}
+
+a.technologies {
+	text-decoration: underline;
+}

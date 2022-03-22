@@ -40,9 +40,9 @@ body {
 
 main {
 	margin: 2.5rem auto;
-	max-width: 60rem;
-	min-width: 10rem;
-	width: 90%;
+	/*max-width: 60rem;*/
+	/*width: 90%;*/
+	width: min(90%, 60rem);
 	background-color: var(--main-bg-color);
 	border: 1px solid rgba(255, 255, 255, 0.1);
 	border-radius: 5px;
@@ -57,20 +57,21 @@ main {
 }
 
 .wrapper {
+	min-width: fit-content;
 	padding: 2rem;
 }
 
-.light {
+.dark {
 	background-color: var(--main-light-color);
 	color: white;
 }
 
-.light h1,
-.light h2,
-.light h3,
-.light h4,
-.light h5,
-.light h6 {
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
 	color: white;
 }
 
@@ -78,7 +79,7 @@ h2 {
 	text-shadow: 1px 1px black;
 }
 
-.light h2 {
+.dark h2 {
 	text-shadow: 1px 1px goldenrod;
 }
 
@@ -98,7 +99,9 @@ h2 {
 .name-wrapper {
 	grid-area: name;
 	background-color: var(--main-light-color);
-	font-size: 1.5rem;
+	/*font-size: 1.5rem;*/
+	/*font-size: clamp(1rem, 10 * (1vw + 1vh) / 2, 2rem);*/
+	font-size: max(1rem, (1vw + 1vh));
 }
 
 .name {
